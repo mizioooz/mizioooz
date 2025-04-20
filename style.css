@@ -1,7 +1,21 @@
-<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
 .callout {
   border-left: 4px solid #00AEEF;
-  background-color: #f0f8ff;
+  background-color: #e6f7ff;
   padding: 1em;
   margin: 1em 0;
   border-radius: 8px;
@@ -24,4 +38,7 @@
   border-color: #dc3545;
   background-color: #ffe6e6;
 }
-</style>
+
+ul {
+  padding-left: 20px;
+}
