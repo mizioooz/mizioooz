@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Привет,%20меня%20зовут%20Дизеризаго!&fontAlign=center&fontAlignY=40&color=gradient&gradientStart=FF5733&gradientEnd=4B0082&animation=twinkling&fontSize=40" alt="Привет, меня зовут Дизеризаго" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Привет,%20меня%20зовут%20Dizarizago!&fontAlign=center&fontAlignY=40&color=gradient&gradientStart=FF5733&gradientEnd=4B0082&animation=twinkling&fontSize=40" alt="Привет, меня зовут Dizarizago" />
 </p>
 
 ---
@@ -27,7 +27,7 @@
   <img width="100%" src="./assets/stats/languages.svg" alt="Языки в веб-проектах">
 </p>
 
-<p align="center"><sub>Карточки автоматически пересобираются каждый час из актуальных данных GitHub.</sub></p>
+<p align="center"><sub>Карточки автоматически пересобираются каждый час. Отображаются только агрегированные показатели — без ссылок и доступа к проектам.</sub></p>
 
 ## 🎯 Обо мне
 

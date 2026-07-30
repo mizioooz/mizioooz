@@ -26,13 +26,29 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Check private statistics access
+        id: access
+        shell: bash
+        env:
+          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
+        run: |
+          if [[ -z "$PROFILE_STATS_TOKEN" ]]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "PROFILE_STATS_TOKEN is not configured; keeping the existing aggregate cards."
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Generate current statistics
+        if: steps.access.outputs.available == 'true'
         run: node scripts/update-profile-stats.mjs
         env:
+          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: mizioooz
 
       - name: Publish updated cards
+        if: steps.access.outputs.available == 'true'
         run: |
           if git diff --quiet -- assets/stats; then
             echo "Statistics have not changed."

@@ -2,7 +2,9 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const username = process.env.GITHUB_USERNAME || "mizioooz";
-const token = process.env.GITHUB_TOKEN;
+const privateToken = process.env.PROFILE_STATS_TOKEN;
+const token = privateToken || process.env.GITHUB_TOKEN;
+const includePrivate = Boolean(privateToken);
 const outputDirectory = path.resolve("assets", "stats");
 
 const headers = {
@@ -29,14 +31,20 @@ async function github(pathname) {
   return response.json();
 }
 
-async function getPublicRepositories() {
+async function getOwnedRepositories() {
   const repositories = [];
 
   for (let page = 1; ; page += 1) {
-    const portion = await github(
-      `/users/${encodeURIComponent(username)}/repos?type=owner&sort=updated&per_page=100&page=${page}`,
+    const endpoint = includePrivate
+      ? `/user/repos?visibility=all&affiliation=owner&sort=updated&per_page=100&page=${page}`
+      : `/users/${encodeURIComponent(username)}/repos?type=owner&sort=updated&per_page=100&page=${page}`;
+    const portion = await github(endpoint);
+    repositories.push(
+      ...portion.filter(
+        (repository) =>
+          repository.owner?.login?.toLowerCase() === username.toLowerCase(),
+      ),
     );
-    repositories.push(...portion);
 
     if (portion.length < 100) {
       return repositories;
@@ -66,34 +74,45 @@ function svgDocument(content, height, title) {
   <desc id="desc">Автоматически сформировано на основе актуальных данных GitHub.</desc>
   <defs>
     <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="55%" stop-color="#131a27"/>
-      <stop offset="100%" stop-color="#111827"/>
+      <stop offset="0%" stop-color="#0d1117">
+        <animate attributeName="stop-color" values="#0d1117;#17102b;#0d1117" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="55%" stop-color="#131a27">
+        <animate attributeName="stop-color" values="#131a27;#10243a;#131a27" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#111827">
+        <animate attributeName="stop-color" values="#111827;#0d2a25;#111827" dur="12s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#6c5ce7"/>
       <stop offset="50%" stop-color="#00b4d8"/>
       <stop offset="100%" stop-color="#00d084"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.35 0;0.35 0;-0.35 0" dur="6s" repeatCount="indefinite"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="18"/>
     </filter>
   </defs>
   <rect x="1" y="1" width="878" height="${height - 2}" rx="22" fill="url(#surface)" stroke="#30363d"/>
-  <ellipse cx="770" cy="30" rx="150" ry="85" fill="#6c5ce7" opacity=".13" filter="url(#glow)"/>
-  <rect x="28" y="26" width="72" height="4" rx="2" fill="url(#accent)"/>
+  <ellipse cx="770" cy="30" rx="150" ry="85" fill="#6c5ce7" opacity=".13" filter="url(#glow)">
+    <animate attributeName="opacity" values=".08;.22;.08" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="740;790;740" dur="11s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="120" cy="${height - 10}" rx="120" ry="55" fill="#00d084" opacity=".05" filter="url(#glow)">
+    <animate attributeName="opacity" values=".03;.13;.03" dur="9s" repeatCount="indefinite"/>
+  </ellipse>
+  <rect x="28" y="26" width="72" height="4" rx="2" fill="url(#accent)">
+    <animate attributeName="width" values="72;144;72" dur="5s" repeatCount="indefinite"/>
+  </rect>
   ${content}
 </svg>
 `;
 }
 
-function createOverview(profile, repositories, updatedAt) {
+function createOverview(profile, repositories, commitCount, updatedAt) {
   const stars = repositories.reduce(
     (total, repository) => total + repository.stargazers_count,
-    0,
-  );
-  const forks = repositories.reduce(
-    (total, repository) => total + repository.forks_count,
     0,
   );
   const activeRepositories = repositories.filter((repository) => {
@@ -102,9 +121,9 @@ function createOverview(profile, repositories, updatedAt) {
   }).length;
 
   const metrics = [
-    ["Репозитории", repositories.length],
-    ["Звёзды", stars],
-    ["Форки", forks],
+    ["Всего проектов", repositories.length],
+    ["Коммиты", commitCount],
+    ["Получено звёзд", stars],
     ["Активные за год", activeRepositories],
   ];
 
@@ -126,10 +145,10 @@ function createOverview(profile, repositories, updatedAt) {
   }).format(updatedAt);
 
   return svgDocument(
-    `<text x="28" y="62" fill="#f0f6fc" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">GitHub · ${escapeXml(profile.login)}</text>
+    `<text x="28" y="62" fill="#f0f6fc" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">Dizarizago · GitHub</text>
   <text x="852" y="61" text-anchor="end" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${escapeXml(timestamp)} МСК</text>
   ${cards}
-  <text x="28" y="210" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${escapeXml(profile.followers)} подписчиков · ${escapeXml(profile.public_repos)} публичных репозиториев</text>`,
+  <text x="28" y="210" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${includePrivate ? "Агрегировано по приватным и публичным репозиториям" : "Агрегировано по публичным репозиториям"} · без раскрытия доступа</text>`,
     232,
     `Статистика GitHub ${profile.login}`,
   );
@@ -198,9 +217,10 @@ function createLanguages(languageBytes, updatedAt) {
 }
 
 async function main() {
-  const [profile, repositories] = await Promise.all([
+  const [profile, repositories, commitSearch] = await Promise.all([
     github(`/users/${encodeURIComponent(username)}`),
-    getPublicRepositories(),
+    getOwnedRepositories(),
+    github(`/search/commits?q=${encodeURIComponent(`author:${username}`)}&per_page=1`),
   ]);
 
   const sourceRepositories = repositories.filter(
@@ -227,7 +247,7 @@ async function main() {
   await Promise.all([
     writeFile(
       path.join(outputDirectory, "overview.svg"),
-      createOverview(profile, repositories, updatedAt),
+      createOverview(profile, repositories, commitSearch.total_count, updatedAt),
       "utf8",
     ),
     writeFile(
