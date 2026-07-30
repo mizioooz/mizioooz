@@ -210,7 +210,7 @@ function createLanguages(languageBytes, updatedAt) {
   ${barSegments}
   </g>
   ${legend}
-  <text x="852" y="216" text-anchor="end" fill="#6e7681" font-family="Segoe UI,Arial,sans-serif" font-size="11">Обновляется автоматически каждый час</text>`,
+  <text x="852" y="216" text-anchor="end" fill="#6e7681" font-family="Segoe UI,Arial,sans-serif" font-size="11">Обновляется в 00:00 и 12:00 МСК</text>`,
     238,
     "Языки в веб-проектах",
   );
