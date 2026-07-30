@@ -27,7 +27,7 @@
   <img width="100%" src="./assets/stats/languages.svg" alt="Языки в веб-проектах">
 </p>
 
-<p align="center"><sub>Карточки автоматически пересобираются каждый час. Отображаются только агрегированные показатели — без ссылок и доступа к проектам.</sub></p>
+<p align="center"><sub>Карточки автоматически пересобираются ежедневно в 00:00 и 12:00 МСК. Отображаются только агрегированные показатели — без ссылок и доступа к проектам.</sub></p>
 
 ## 🎯 Обо мне
 
@@ -52,16 +52,17 @@
   <img src="https://img.shields.io/badge/Accessibility-доступный_веб-00B894?style=for-the-badge&logo=accessibility&logoColor=white" alt="Доступность веб-интерфейсов">
 </p>
 
----
-
 ## 📬 Контакты
 
 <p align="center">
+  <a href="https://github.com/mizioooz">
+    <img src="https://img.shields.io/badge/GITHUB-MIZIOOOZ-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub mizioooz">
+  </a>
   <a href="https://t.me/ss_dizarizago_ss">
-    <img src="https://img.shields.io/badge/Telegram-%40ss__dizarizago__ss-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram @ss_dizarizago_ss">
+    <img src="https://img.shields.io/badge/TELEGRAM-%40SS__DIZARIZAGO__SS-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram @ss_dizarizago_ss">
   </a>
   <a href="https://vk.ru/ssdizarizago">
-    <img src="https://img.shields.io/badge/VK-ssdizarizago-0077FF?style=for-the-badge&logo=vk&logoColor=white" alt="VK ssdizarizago">
+    <img src="https://img.shields.io/badge/VK-SSDIZARIZAGO-0077FF?style=flat-square&logo=vk&logoColor=white" alt="VK ssdizarizago">
   </a>
 </p>
 
