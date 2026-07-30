@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Привет,%20меня%20зовут%20Mizioooz!&fontAlign=center&fontAlignY=40&color=gradient&gradientStart=FF5733&gradientEnd=4B0082&animation=twinkling&fontSize=40" alt="header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Привет,%20меня%20зовут%20Дизеризаго!&fontAlign=center&fontAlignY=40&color=gradient&gradientStart=FF5733&gradientEnd=4B0082&animation=twinkling&fontSize=40" alt="Привет, меня зовут Дизеризаго" />
 </p>
 
 ---
@@ -20,17 +20,14 @@
 ## 📊 GitHub статистика
 
 <p align="center">
-  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mizioooz&theme=github_dark" alt="Статистика профиля Mizioooz">
+  <img width="100%" src="./assets/stats/overview.svg" alt="Актуальная статистика GitHub">
 </p>
 
 <p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=mizioooz&theme=github_dark" alt="Статистика GitHub">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mizioooz&theme=github_dark" alt="Языки в репозиториях">
+  <img width="100%" src="./assets/stats/languages.svg" alt="Языки в веб-проектах">
 </p>
 
-<p align="center">
-  <img width="70%" src="https://streak-stats.demolab.com?user=mizioooz&theme=github-dark-blue&hide_border=true&locale=ru" alt="Серия активности GitHub">
-</p>
+<p align="center"><sub>Карточки автоматически пересобираются каждый час из актуальных данных GitHub.</sub></p>
 
 ## 🎯 Обо мне
 
