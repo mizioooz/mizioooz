@@ -15,29 +15,56 @@
   <a href="https://deepseek.com"><img src="https://img.shields.io/badge/DeepSeek-0F766E?style=for-the-badge&logoColor=white" alt="DeepSeek"></a>
 </div>
 
-## 📈 GitHub статистика
+## 📊 GitHub статистика
 
-<div align="center">
-   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=mizioooz&show_icons=true&theme=radical"/>
-   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mizioooz&layout=compact&theme=radical"/>
-</div>
+<p align="center">
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mizioooz&theme=github_dark" alt="Статистика профиля Mizioooz">
+</p>
 
+<p align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=mizioooz&theme=github_dark" alt="Статистика GitHub">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mizioooz&theme=github_dark" alt="Языки в репозиториях">
+</p>
+
+<p align="center">
+  <img width="70%" src="https://streak-stats.demolab.com?user=mizioooz&theme=github-dark-blue&hide_border=true&locale=ru" alt="Серия активности GitHub">
+</p>
 
 ## 🎯 Обо мне
 
-> 💻 Фронтенд-разработчик с фокусом на создание интерактивных и производительных веб-приложений. Увлекаюсь современными технологиями и лучшими практиками разработки.
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-разработка-0D1117?style=for-the-badge&logo=html5&logoColor=E34F26" alt="Frontend-разработка">
+  <img src="https://img.shields.io/badge/Интерактивные-интерфейсы-0D1117?style=for-the-badge&logo=css3&logoColor=1572B6" alt="Интерактивные интерфейсы">
+  <img src="https://img.shields.io/badge/Производительность-0D1117?style=for-the-badge&logo=lighthouse&logoColor=F44B21" alt="Производительность">
+</p>
 
+<p align="center">
+  Фронтенд-разработчик с фокусом на выразительные, интерактивные и производительные
+  веб-приложения. Превращаю идеи в понятные интерфейсы и постоянно улучшаю качество
+  пользовательского опыта.
+</p>
 
 ## 📖 Изучаю сейчас
 
-> - 🚀 Оптимизация производительности веб-приложений
-> - 🧠 Нейронные сети и машинное обучение
-> - ⚙️ Алгоритмы и структуры данных на C++
+<p align="center">
+  <img src="https://img.shields.io/badge/Web_Performance-оптимизация-C8FF26?style=for-the-badge&logo=lighthouse&logoColor=111111" alt="Оптимизация Web Performance">
+  <img src="https://img.shields.io/badge/Neural_Networks-ML-FF6F00?style=for-the-badge&logo=pytorch&logoColor=white" alt="Нейронные сети и машинное обучение">
+  <img src="https://img.shields.io/badge/C%2B%2B-алгоритмы_и_структуры_данных-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="Алгоритмы и структуры данных на C++">
+</p>
+
 ---
 
 ## 📬 Контакты
 
-<div align="center">
-  <a href="https://t.me/mizioooz"><img src="https://img.shields.io/badge/-Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
-  <a href="https://vk.com/mizioooz"><img src="https://img.shields.io/badge/-VK-0077FF?style=for-the-badge&logo=vk&logoColor=white" alt="VK"></a>
-</div>
+<p align="center">
+  <a href="https://t.me/ss_dizarizago_ss">
+    <img src="https://img.shields.io/badge/Telegram-%40ss__dizarizago__ss-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram @ss_dizarizago_ss">
+  </a>
+  <a href="https://vk.ru/ssdizarizago">
+    <img src="https://img.shields.io/badge/VK-ssdizarizago-0077FF?style=for-the-badge&logo=vk&logoColor=white" alt="VK ssdizarizago">
+  </a>
+</p>
+
+<p align="center">
+  <sub>Открыт к общению, совместным проектам и новым профессиональным знакомствам.</sub>
+</p>
