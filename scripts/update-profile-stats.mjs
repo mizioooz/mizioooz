@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const username = process.env.GITHUB_USERNAME || "mizioooz";
+const username = process.env.GITHUB_USERNAME || "ss-dizarizago";
 const privateToken = process.env.PROFILE_STATS_TOKEN;
 const token = privateToken || process.env.GITHUB_TOKEN;
 const includePrivate = Boolean(privateToken);
