@@ -148,7 +148,8 @@ function createOverview(profile, repositories, commitCount, updatedAt) {
     `<text x="28" y="62" fill="#f0f6fc" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">Dizarizago · GitHub</text>
   <text x="852" y="61" text-anchor="end" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${escapeXml(timestamp)} МСК</text>
   ${cards}
-  <text x="28" y="210" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${includePrivate ? "Агрегировано по приватным и публичным репозиториям" : "Агрегировано по публичным репозиториям"} · без раскрытия доступа</text>`,
+  <text x="28" y="210" fill="#8b949e" font-family="Segoe UI,Arial,sans-serif" font-size="12">${includePrivate ? "Агрегировано по приватным и публичным репозиториям" : "Агрегировано по публичным репозиториям"} · без раскрытия доступа</text>
+  <text x="852" y="210" text-anchor="end" fill="#6e7681" font-family="Segoe UI,Arial,sans-serif" font-size="11">Ежедневно в 00:00 МСК (UTC+3)</text>`,
     232,
     `Статистика GitHub ${profile.login}`,
   );
@@ -210,7 +211,7 @@ function createLanguages(languageBytes, updatedAt) {
   ${barSegments}
   </g>
   ${legend}
-  <text x="852" y="216" text-anchor="end" fill="#6e7681" font-family="Segoe UI,Arial,sans-serif" font-size="11">Обновляется в 00:00 и 12:00 МСК</text>`,
+  <text x="852" y="216" text-anchor="end" fill="#6e7681" font-family="Segoe UI,Arial,sans-serif" font-size="11">Ежедневно в 00:00 МСК (UTC+3)</text>`,
     238,
     "Языки в веб-проектах",
   );
